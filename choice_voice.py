@@ -1,6 +1,6 @@
 import pyttsx3
 import sys
-
+from time import sleep
 
 class Voices_System:
     
@@ -11,9 +11,12 @@ class Voices_System:
         self.voices = self.engine.getProperty('voices')
         self.search_voices()
         
-        print("Buscando vozes no sistema...")
+        print("\nBuscando vozes no sistema...\n")
+        sleep(1)
+        print(f"Foram encontradas {len(self.voices)} no seu sistema...")
         
-        
+        sleep(1)
+
      
     # procura as vozes do sistema 
     def search_voices(self):
@@ -41,6 +44,8 @@ class Voices_System:
         portuguese_voice = None
         english_voice = None
         
+        
+        
         print("\nVozes disponiveis em Português:\n")             
    
         for i, voice in enumerate(portuguese_voices):
@@ -50,7 +55,7 @@ class Voices_System:
             self.voice_name = voice.name
             self.voice_name = self.voice_name.split(" ")
             self.voice_name = self.voice_name[1]
-            self.text_voice = f"Olá meu nome é {self.voice_name}, "
+            self.text_voice = f"Olá meu nome é {self.voice_name} "
             
             if len(portuguese_voices) == 1:
                  self.text_voice = self.text_voice +  "Eu sou a única voz em Português no seu sistema , o que você achou de mim?"
@@ -58,11 +63,12 @@ class Voices_System:
                  
             elif len(portuguese_voices) > 1:
                 self.text_voice = self.text_voice + f"Eu sou a voz em Português número {self.voice_index}" 
-                
+                print()
             else:
-                print("Não foi encontrada uma voz em português.")
+                print("\nNão foi encontrada uma voz em português.\n")
                 
-                print("Encerrando o programa")
+                print("Encerrando o programa...")
+                sleep(1)
                 sys.exit()
             
             
@@ -103,18 +109,18 @@ class Voices_System:
             self.voice_name = voice.name
             self.voice_name = self.voice_name.split(" ")
             self.voice_name = self.voice_name[1]
-            self.text_voice = f"Hello, my name is {self.voice_name}, "
+            self.text_voice = f"Hello, my name is {self.voice_name} "
             
             if len(english_voices) == 1:
                 
                  self.text_voice = self.text_voice +  'I am the only English voice in your system, what did you think of me?'
                  
-                 print(f"Tradução: Olá eu sou o {self.voice_name},  Eu sou a única voz em Inglês no seu sistema , o que você achou de mim?\n")
+                 print(f"\nTradução: Olá eu sou o {self.voice_name},  Eu sou a única voz em Inglês no seu sistema , o que você achou de mim?\n")
                  english_voice = portuguese_voices[0]
                  
             elif len(english_voices) > 1:
                 self.text_voice = self.text_voice + f'I am the English voice number {self.voice_index}'
-                print(f'Tradução: "Olá eu sou o {self.voice_name} Eu sou a voz em Inglês número" {self.voice_index}') 
+                print(f'Tradução: "Olá eu sou o {self.voice_name} Eu sou a voz em Inglês número" {self.voice_index}\n') 
                 
                 
             else:
@@ -144,7 +150,7 @@ class Voices_System:
             
             
                 
-            choice_english = input("\nEscolha: \n")
+            choice_english = input("\nEscolha: ")
             
             if int(choice_english) > len(english_voices)  or int(choice_english) == "" or choice_english.isdigit() == False:
                 continue

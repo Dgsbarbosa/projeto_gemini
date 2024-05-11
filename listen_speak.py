@@ -10,6 +10,7 @@ class Speak:
         self.engine = pyttsx3.init()
         self.voices = Voices_System()
         self.voices_selected = self.voices.show_voices()
+        
     def listen(self):
         with sr.Microphone() as source:
             self.recognizer.pause_threshold = 0.5
@@ -23,7 +24,7 @@ class Speak:
             return self.ouvir_usuario()
         
 
-    def speak(self, language, texto):
+    def speak(self, texto,language="" ):
         
         if language == "pt":
             self.engine.setProperty("voice",self.voices_selected["portuguese"].id)
@@ -34,5 +35,3 @@ class Speak:
         self.engine.runAndWait()
         
         
-
-   
