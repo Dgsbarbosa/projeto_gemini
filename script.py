@@ -110,7 +110,10 @@ def speak_example(dict):
     
     speaks.speak(phrase_pt, "pt")
     
-    print(f"\nTradução: {phrase_pt}\n")
+    print(f"Origin: {phrase_en}")
+    print(f"\nTradução: {phrase_pt}")
+    
+    
     for _ in range(3):
         
         speaks.speak(phrase_en, "en")
