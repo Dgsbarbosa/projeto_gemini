@@ -12,14 +12,14 @@ speaks = Speak()
 def choices():
     
     level_english = {
-        "1":"fácil",
-        "2": "médio",
+        "1":"fÃ¡cil",
+        "2": "mÃ©dio",
         "3": "Dificil"
         
     }
 
     subject = {
-        "1":"Aleatório",
+        "1":"AleatÃ³rio",
         "2": "Escolher o assunto"
     }
     
@@ -35,7 +35,7 @@ def choices():
             choice_level = level_english[choice_level]
             break
         else:
-            print("\nDigite uma valor válido")
+            print("\nDigite uma valor vÃ¡lido")
             
     while True:
         print()
@@ -50,7 +50,7 @@ def choices():
                 choice_subject= text_subject
             break
         else:
-            print("\nDigite uma valor válido")
+            print("\nDigite uma valor vÃ¡lido")
             
         
 
@@ -84,11 +84,11 @@ examples = response["exemplos"]
 
 print(f"\nNome da aula: \n{class_name}\n")
 
-print(f"Descrição:\n{explanation}\n")
+print(f"DescriÃ§Ã£o:\n{explanation}\n")
 
 
 while True:
-    go_examples = input("Gostaria de iniciar os exemplos? s (sim) ou n(não):  ").lower()
+    go_examples = input("Gostaria de iniciar os exemplos? s (sim) ou n(nÃ£o):  ").lower()
     
     if go_examples == "s":
         speaks.speak("Vamos iniciar nossos exemplos", "pt")
@@ -111,7 +111,7 @@ def speak_example(dict):
     speaks.speak(phrase_pt, "pt")
     
     print(f"Origin: {phrase_en}")
-    print(f"\nTradução: {phrase_pt}")
+    print(f"\nTraduÃ§Ã£o: {phrase_pt}")
     
     
     for _ in range(3):
@@ -129,9 +129,9 @@ for example in examples:
     
     speak_example(example)
 
-speaks.speak("Parabens, você chegou ao final","pt")
+speaks.speak("Parabens, vocÃª chegou ao final","pt")
 sleep(1)
 
-print("Tradução: Parabens, você chegou ao final")
+print("TraduÃ§Ã£o: Parabens, vocÃª chegou ao final")
 speaks.speak("Congratulations, you've reached the end","en")
 
