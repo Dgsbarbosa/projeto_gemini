@@ -129,3 +129,9 @@ for example in examples:
     
     speak_example(example)
 
+speaks.speak("Parabens, você chegou ao final","pt")
+sleep(1)
+
+print("Tradução: Parabens, você chegou ao final")
+speaks.speak("Congratulations, you've reached the end","en")
+
